@@ -1,0 +1,90 @@
+**Classification** আর **Segmentation** — দুটোই Machine Learning / Computer Vision-এর কাজ, কিন্তু উদ্দেশ্য আলাদা।
+
+# 1. Classification (শুধু “কি আছে” বলে)
+
+এখানে model পুরো image দেখে বলে image-এ **কোন class/object আছে**।
+
+উদাহরণ:
+
+* Chest X-ray → “Pneumonia”
+* Cat vs Dog → “Dog”
+* Traffic sign → “Stop Sign”
+
+মানে output সাধারণত একটা label হয়।
+
+Example:
+
+📷 Input Image → 🧠 Model → **“Cat”**
+
+এখানে model জানে cat আছে, কিন্তু **image-এর কোন জায়গায় cat আছে সেটা বলে না।**
+
+---
+
+# 2. Segmentation (কোথায় আছে সেটাও বলে)
+
+এখানে model শুধু object detect করে না, বরং image-এর **প্রতিটা pixel কোন object-এর অংশ** সেটা বলে।
+
+মানে object-এর exact shape/area বের করে।
+
+Example:
+
+📷 Road image → model বলে:
+
+* এই pixels = road
+* এই pixels = car
+* এই pixels = human
+
+Output হয় mask/map আকারে।
+
+---
+
+## সহজ analogy
+
+ধরো একটা class photo আছে।
+
+### Classification:
+
+“এই ছবিতে student আছে।”
+
+### Segmentation:
+
+“এই student টা ছবির এই exact অংশে আছে”
+(পুরো body boundary mark করে দেয়)
+
+---
+
+# Real-life use
+
+## Classification use:
+
+* Disease prediction
+* Spam detection
+* Face recognition
+* Emotion classification
+
+## Segmentation use:
+
+* Medical tumor detection
+* Self-driving cars
+* Satellite image analysis
+* Background removal
+
+---
+
+# Main Difference
+
+| Feature      | Classification | Segmentation        |
+| ------------ | -------------- | ------------------- |
+| কাজ          | কী আছে বলে     | কোথায় আছে বলে       |
+| Output       | Label          | Pixel-wise mask     |
+| Detail level | Low            | High                |
+| Example      | “Tumor”        | tumor-এর exact area |
+
+---
+
+Medical imaging example:
+
+* **Classification:** “Cancer আছে”
+* **Segmentation:** “Cancer এই জায়গাগুলোতে আছে”
+
+এটাই biggest difference।
